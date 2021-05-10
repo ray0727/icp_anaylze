@@ -21,7 +21,7 @@ def draw(source, target):
     o3d.visualization.draw_geometries([source_temp, target_temp])
 
 
-threshold = 8
+threshold = 5
 source = o3d.io.read_point_cloud("./spherical_pcd/spherical_door.pcd")
 target = o3d.io.read_point_cloud("./small_plate_pcd/smallplate_door.pcd")
 print("size source:", source)
