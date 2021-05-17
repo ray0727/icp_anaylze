@@ -21,8 +21,9 @@ def draw(source, target):
     o3d.visualization.draw_geometries([source_temp, target_temp])
 
 threshold = 8
-source = o3d.io.read_point_cloud("./laser2pc_spherical/1622.ply")
-target = o3d.io.read_point_cloud("./laser2pc_small_plate/1700.ply")
+source = o3d.io.read_point_cloud("./mmwave_laserscan/laser2pc_small_plate/1630.ply")
+target = o3d.io.read_point_cloud("./mmwave_laserscan/laser2pc_small_plate/800.ply")
+
 print("size source:", source)
 print("size target:", target)
 source = source.voxel_down_sample(voxel_size=0.05)
@@ -30,10 +31,10 @@ target = target.voxel_down_sample(voxel_size=0.05)
 
 draw(source, target)
 
-transform = np.asarray([[ 9.99979587e-01, 6.31990881e-03 ,9.40401255e-04 ,-1.15421668e+00],
-                        [-6.32213845e-03, 9.99977166e-01 ,2.38716297e-03 ,-3.19260280e-01],
-                        [-9.25293129e-04,-2.39305959e-03 ,9.99996709e-01 ,-3.20413616e-03],
-                        [ 0.00000000e+00, 0.00000000e+00 ,0.00000000e+00 ,1.00000000e+00]])
+transform = np.asarray([[ 0.99564175, -0.09317902,  0.00389495, -0.06181105],
+                        [ 0.09313781,  0.99560615,  0.00968209,  0.01593541],
+                        [-0.00478001, -0.00927713,  0.99994554, -0.00825953],
+                        [ 0.        ,  0.        ,  0.        ,  1.        ]])
 
 
 source.transform(transform)

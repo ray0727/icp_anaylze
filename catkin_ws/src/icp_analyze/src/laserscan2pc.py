@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import math
 import os
 import rospy
@@ -11,7 +12,6 @@ global num
 num = 0
 
 def laser_to_pc(laser):
-
     a = np.arange(start=-120, stop=121, step=1)
     a = np.radians(a)
     x = np.cos(a) * laser

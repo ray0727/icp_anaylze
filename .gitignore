@@ -1,2 +1,7 @@
 *.ply
 *.pcd
+.catkin_workspace
+build/
+devel/
+*.bag
+*.pth
